@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        a{ 
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'home' %}"><h2 style="color: #45a049; text-align: center;">← Bosh sahifa</h2></a>
+    <form action="{% url 'guruh' %}" method="post">
+        <h2>C<sup>m</sup><sub>n</sub></h2> <h4>Bu yerda  m!/n!*(m-n)!</h4>
+        <p style="color: #45a049;">Bu yerda m ninig qiymati n ning qiymatidan katta bo'lishi kerak</p>
+        {% csrf_token %}
+        <input type="text" name="entry2" placeholder="M ning qiymatini kiriting">
+        <input type="text" name="entry1" placeholder="N ning qiymatini kiriting">
+        <button type="submit">Natija</button>
+    </form>
+    {% if result %}
+        <h1>{{ result }}</h1>
+    {% endif %}
+</body>
+</html>
