@@ -51,30 +51,35 @@
 <body>
     <div>
         <img src="/media/tatu.png"  style="border-radius: 50%; text-align: left;">
-        <h3>TATU Qarshi filiali talabasi</h3>
+        <h3>TATU Qarshi filiali talabasi <br> kombinatorika formulalari</h3>
     </div>
     <div>
-        <a href="guruh" class="color1">
+        <a href="{% url 'guruh' %}" class="color1">
             <div>
-                Guruhlash
+                takrorsiz
+                <h2>Guruhlash</h2>
+                <h2>C<sup>m</sup><sub>n</sub></h2>
                 <img src="/media/math.png" alt="">
             </div>
         </a>
-        <a href="scds" class="color2">
-            <div>
-                orinlashtrish
+        <a href="{% url 'takroriy' %}" class="color2">
+            <div>takroriy
+                <h2>Guruhlash</h2>
+                <h5>C<sup>m</sup><sub>m+n-1</sub></h5>
                 <img src="/media/math.png" alt="">
             </div>
         </a>
-        <a href="dsa" class="color3">
+        <a href="{% url 'orin' %}" class="color3">
             <div>
-                masala
+                <h2>O'rinlashtrish</h2>
+                <h2>A<sup>m</sup><sub>n</sub></h2>
                 <img src="/media/math.png" alt="">
             </div>
         </a>
-        <a href="sasa" class="color4">
+        <a href="{% url 'url' %}" class="color4">
             <div>
-                formula
+                <h2>O'rin alishtrish</h2>
+                <h2>P<sub>n</sub></h2>
                 <img src="/media/math.png" alt="">
             </div>
         </a>
