@@ -12,7 +12,7 @@ def guruhlash(request):
             result = "m soni n dan katta bulishi kerak qayta urinib koring"
         else:
             c=math.factorial(m) / (math.factorial(n) * math.factorial(m - n))
-            result = f"Natija: {c}"
+            result = f"={c}"
 
         return render(request, 'guruh.html', {'result': result})
     else:
