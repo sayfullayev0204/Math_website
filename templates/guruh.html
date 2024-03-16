@@ -65,15 +65,15 @@
     <a href="{% url 'home' %}"><h2 style="color: #45a049; text-align: center;">← Bosh sahifa</h2></a>
     <form action="{% url 'guruh' %}" method="post">
         <h2>C<sup>m</sup><sub>n</sub></h2> <h4>Bu yerda  m!/n!*(m-n)!</h4>
-        <p style="color: #45a049;">Bu yerda m ninig qiymati n ning qiymatidan katta bo'lishi kerak</p>
+        <p style="color: #c51717;">Bu yerda m ninig qiymati n ning qiymatidan katta bo'lishi kerak</p>
         {% csrf_token %}
         <div style="display: flex;">
             <div>
                 <h1>
                     C
                     <div class="input-container">
-                        <input type="text" class="a" name="entry2" placeholder="n">
-                        <input type="text" class="b" name="entry1" placeholder="m">
+                        <input type="text" class="a" name="entry1" placeholder="n">
+                        <input type="text" class="b" name="entry2" placeholder="m">
                     </div>
                 </h1>
             </div>
