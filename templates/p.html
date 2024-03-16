@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        a{ 
+            text-decoration: none;
+        }
+        input {
+            display: block; /* Set inputs to display as blocks */
+            margin-bottom: 5px; /* Add some spacing between inputs */
+        }
+
+        .a, .b {
+            width: 20px; /* Set width for inputs */
+        }
+
+        h1 {
+            display: flex; /* Make the <h1> a flex container */
+            align-items: center; /* Align items (C and inputs) vertically */
+        }
+
+        /* Add styles to align the inputs */
+        .input-container {
+            display: flex; /* Use flexbox for input container */
+            flex-direction: column; /* Stack inputs vertically */
+            align-items: center; /* Align items (inputs) horizontally */
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'home' %}"><h2 style="color: #45a049; text-align: center;">← Bosh sahifa</h2></a>
+    <form action="{% url 'url' %}" method="post">
+        <h2>P<sub>m</sub></h2> <h4>Bu yerda  m!</h4>
+        <p style="color: #c51717;">Bu yerda m ga qiymat bering</p>
+        {% csrf_token %}
+        <div style="display: flex;">
+            <div>
+                <h1>
+                    P
+                    <div class="input-container">
+                        <input type="text" class="b" name="entry1" placeholder="m">
+                    </div>
+                </h1>
+            </div>
+            {% if result %}
+            <h1>{{ result }}</h1>
+            {% endif %}
+        </div>
+        <button type="submit">Natija</button>
+    </form>
+    
+</body>
+</html>
