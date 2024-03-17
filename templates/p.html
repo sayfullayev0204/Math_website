@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TATU qf</title>
-    <link rel="icon" href="/media/math.png" type="png">
+    <title>Calculator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -65,18 +64,29 @@
 <body>
     <a href="{% url 'home' %}"><h2 style="color: #45a049; text-align: center;">← Bosh sahifa</h2></a>
     <form action="{% url 'url' %}" method="post">
-        <h2>P<sub>m</sub></h2> <h4>Bu yerda  m!</h4>
+        <h2>P<sub>m</sub></h2> <h4>Formula  m!</h4>
         <p style="color: #c51717;">Bu yerda m ga qiymat bering</p>
         {% csrf_token %}
         <div style="display: flex;">
+            {% if n %}
             <div>
                 <h1>
                     P
                     <div class="input-container">
-                        <input type="text" class="b" name="entry1" placeholder="m">
+                        <input type="text" class="b" name="entry1" placeholder="{{n}}">
                     </div>
                 </h1>
-            </div>
+            </div> 
+            {% else %}
+            <div>
+                <h1>
+                    P
+                    <div class="input-container">
+                        <input type="text" class="b" name="entry1" placeholder="n">
+                    </div>
+                </h1>
+            </div> 
+            {% endif %}
             {% if result %}
             <h1>{{ result }}</h1>
             {% endif %}
