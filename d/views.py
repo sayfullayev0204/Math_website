@@ -14,7 +14,7 @@ def guruhlash(request):
             c=math.factorial(m) / (math.factorial(n) * math.factorial(m - n))
             result = f"={c}"
 
-        return render(request, 'guruh.html', {'result': result})
+        return render(request, 'guruh.html', {'result': result, 'n':n, 'm':m})
     else:
         return render(request, 'guruh.html')
 def takroriy(request):
@@ -26,7 +26,7 @@ def takroriy(request):
         else:
             c=math.factorial(m+n-1)/(math.factorial(n)*math.factorial(m-1))
             result = f"={c}"
-        return render(request, 'takroriy.html', {'result': result})
+        return render(request, 'takroriy.html', {'result': result, 'n':n, 'm':m})
     else:
         return render(request, 'takroriy.html')
         
@@ -36,14 +36,15 @@ def orin(request):
         m = int(request.POST.get('entry2'))
         c = math.factorial(m)/math.factorial(n)
         result = f"={c}"
-        return render(request, 'orin.html', {'result':result})
+        return render(request, 'orin.html', {'result':result, 'n':n, 'm':m})
     else:
         return render(request, 'orin.html')
+    
 def p(request):
     if request.method == 'POST':
         n = int(request.POST.get('entry1'))
         c = math.factorial(n)
         result = f"={c}"
-        return render(request, 'p.html', {'result':result})
+        return render(request, 'p.html', {'result':result,'n':n})
     else:
         return render(request, 'p.html')
